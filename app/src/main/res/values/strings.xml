@@ -1,3 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MobileApp</string>
+
+    <string name="app_name">MyAndroidApp</string>
+    <string name="type_prompt">Sort by</string>
+
+    <string-array name="sort_arrays">
+        <item>Create date</item>
+        <item>Name</item>
+        <item>Retweet count</item>
+        <item>Favorite count</item>
+    </string-array>
+
 </resources>

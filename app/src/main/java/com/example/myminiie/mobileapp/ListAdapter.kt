@@ -13,6 +13,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Created by myminiie on 27/3/2561.
@@ -34,7 +36,9 @@ class ListAdapter(val context: ShowsearchActivity, val list: ArrayList<TweetObje
         tweetText.text = list[position].text
         tweetRetweet.text = list[position].retweet_count.toString()
         tweetFavorite.text = list[position].favorite_count.toString()
-        tweetTime.text = list[position].createDate.toString()
+        var sf = SimpleDateFormat("dd  MMM yyyy HH:mm:ss ")
+        //System.out.println("Current Date: " + ft.format(dNow))
+        tweetTime.text = sf.format(list[position].createDate).toString()
 
         //for retrieve image from url to show in profile image
        DownloadImageTask(tweetpic).execute(list[position].profile_image_url)
