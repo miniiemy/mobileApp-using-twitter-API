@@ -81,7 +81,7 @@ class myAPPEntity : AsyncTask<String, String, String>(){
     override fun onPostExecute(result: String?) {
         super.onPostExecute(result)
         var callback : myAPPInteractor = myAPPInteractor()
-        callback.handleJSON(result.toString(),activity)
+        callback.sendJSON(result.toString(),activity)
 
     }//end inPostExecute
 
