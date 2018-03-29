@@ -22,21 +22,23 @@ class ListAdapter(val context: ShowsearchActivity, val list: ArrayList<TweetObje
 
         val view: View = LayoutInflater.from(context).inflate(R.layout.row_layout,parent,false)
         val tweetName = view.findViewById<TextView>(R.id.tweet_name) as AppCompatTextView
+        val tweetScreenName = view.findViewById<TextView>(R.id.tweet_screenname) as AppCompatTextView
         val tweetText = view.findViewById<TextView>(R.id.tweet_text) as AppCompatTextView
         val tweetRetweet = view.findViewById<TextView>(R.id.tweet_retweet) as AppCompatTextView
         val tweetFavorite = view.findViewById<TextView>(R.id.tweet_favorite) as AppCompatTextView
         val tweetTime = view.findViewById<TextView>(R.id.tweet_date) as AppCompatTextView
         val tweetpic = view.findViewById<ImageView>(R.id.tweet_image) as AppCompatImageView
 
-      tweetName.text =list[position].name
+        tweetName.text =list[position].name
+        tweetScreenName.text =list[position].screen_name
         tweetText.text = list[position].text
         tweetRetweet.text = list[position].retweet_count.toString()
         tweetFavorite.text = list[position].favorite_count.toString()
         tweetTime.text = list[position].createDate.toString()
+
+        //for retrieve image from url to show in profile image
        DownloadImageTask(tweetpic).execute(list[position].profile_image_url)
 
-        //var bmp = BitmapFactory.decodeStream()
-        // tweetpic.setImageBitmap(bmp)
 
 
         return view
@@ -68,12 +70,12 @@ class DownloadImageTask(private val imageView: ImageView) : AsyncTask<String, Vo
         }
 
         return image
-    }
+    }//end doInBackground
 
     @SuppressLint("NewApi")
     override fun onPostExecute(result: Bitmap?) {
         if (result != null) {
             imageView.setImageBitmap(result)
         }
-    }
+    }//end onPostExecute
 }
