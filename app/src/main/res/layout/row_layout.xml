@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/tweet_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tweet_date"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        app:srcCompat="@android:drawable/ic_menu_report_image" />
+
+    <TextView
+        android:id="@+id/tweet_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tweet_image"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/tweet_image"
+        android:layout_toRightOf="@+id/tweet_image"
+        android:text="tweet-name"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/tweet_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tweet_image"
+        android:layout_alignStart="@+id/tweet_image"
+        android:layout_below="@+id/tweet_image"
+        android:layout_marginTop="10dp"
+        android:text="tweet-text"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tweet_retweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignBaseline="@+id/textRetweet"
+        android:layout_alignBottom="@+id/textRetweet"
+        android:layout_alignLeft="@+id/tweet_name"
+        android:layout_alignStart="@+id/tweet_name"
+        android:text="tweet-rt" />
+
+    <TextView
+        android:id="@+id/tweet_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textFavorite"
+        android:layout_alignBottom="@+id/textFavorite"
+        android:layout_toEndOf="@+id/textFavorite"
+        android:layout_toRightOf="@+id/textFavorite"
+        android:text="tweet-fav" />
+
+    <TextView
+        android:id="@+id/tweet_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="10dp"
+        android:text="tweet-date" />
+
+    <TextView
+        android:id="@+id/textRetweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_below="@+id/tweet_text"
+        android:layout_marginTop="21dp"
+        android:layout_toLeftOf="@+id/tweet_retweet"
+        android:layout_toStartOf="@+id/tweet_retweet"
+        android:text="Retweet:" />
+
+    <TextView
+        android:id="@+id/textFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tweet_retweet"
+        android:layout_alignBottom="@+id/tweet_retweet"
+
+        android:layout_centerHorizontal="true"
+        android:text="Favorite:" />
+
+</RelativeLayout>
