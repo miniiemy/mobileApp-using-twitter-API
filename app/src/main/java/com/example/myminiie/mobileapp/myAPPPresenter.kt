@@ -5,7 +5,7 @@ import kotlinx.android.synthetic.main.activity_showsearch.*
 import org.json.JSONObject
 import java.net.URLEncoder
 import java.text.SimpleDateFormat
-import java.util.ArrayList
+import java.util.*
 
 /**
  * Created by myminiie on 29/3/2561.
@@ -35,14 +35,8 @@ class myAPPPresenter(){
                 val jsonObjectTemp = jsonArray.getJSONObject(count)
                 val jsonObjectUser = jsonObjectTemp.getJSONObject("user")
 
-                var twitter = "EEE MMM dd HH:mm:ss ZZZZZ yyyy"
-                var sf = SimpleDateFormat(twitter)
-                var time= sf.parse(jsonObjectTemp.getString("created_at")).toString()
-                time.replace(" +0000","")
-                var timeArray = time.split(" ")
 
-                var timenew = timeArray[3]+" "+timeArray[2]+" "+timeArray[1]+" "+timeArray[5]
-
+                var date = Date(jsonObjectTemp.getString("created_at"))
                 list.add(TweetObject(
                         jsonObjectTemp.getString("id_str"),
                         jsonObjectUser.getString("name"),
@@ -51,7 +45,7 @@ class myAPPPresenter(){
                         jsonObjectUser.getString("profile_image_url"),
                         jsonObjectTemp.getInt("retweet_count"),
                         jsonObjectTemp.getInt("favorite_count"),
-                        timenew
+                        date
 
 
                 ))
